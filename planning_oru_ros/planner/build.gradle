@@ -73,6 +73,17 @@ dependencies {
 
   //This is for Luigi:
   //compile fileTree(dir: 'lib', include: '**/*.jar')
+
+  ///////////////////////////////////////////////
+  // PDDL4J dependency alternatives: //
+  ///////////////////////////////////////////////
+  
+
+  
+  //current local snapshot: Version pddl4j-3.8.3
+  compile fileTree(dir: 'lib', include: ['pddl4j.jar'])
+
+
 }
 
 task deleteHorribleScripts(type: Delete) {
