@@ -1,4 +1,5 @@
-package se.oru.coordination.coordinator.ros_coordinator.generic;
+package se.oru.planning.planner.ros_planner.generic;
+
 
 import java.util.ArrayList;
 import java.util.Comparator;

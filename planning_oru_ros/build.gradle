@@ -34,7 +34,7 @@ configurations.all {
 }
 
 allprojects {
-    group 'se.oru.planner'
+    group 'se.oru.planning'
     version = project.catkin.pkg.version
     repositories {
       maven { url 'https://jitpack.io' }
