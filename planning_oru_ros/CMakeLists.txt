@@ -3,7 +3,7 @@
 ##############################################################################
 
 cmake_minimum_required(VERSION 2.8.3)
-project(coordination_oru_ros)
+project(planning_oru_ros)
 
 ##############################################################################
 # Catkin
@@ -14,6 +14,8 @@ find_package(catkin REQUIRED rosjava_build_tools)
 find_package(catkin REQUIRED genjava)
 
 find_package(catkin REQUIRED coordination_oru_msgs)
+
+find_package(catkin REQUIRED coordination_oru_ros)
 
 # Set the gradle targets you want catkin's make to run by default, e.g.
 #   catkin_rosjava_setup(installApp)
