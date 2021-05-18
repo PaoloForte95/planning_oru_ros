@@ -15,8 +15,6 @@ find_package(catkin REQUIRED genjava)
 
 find_package(catkin REQUIRED coordination_oru_msgs)
 
-find_package(catkin REQUIRED coordination_oru_ros)
-
 # Set the gradle targets you want catkin's make to run by default, e.g.
 #   catkin_rosjava_setup(installApp)
 # Note that the catkin_create_rosjava_xxx scripts will usually automatically
