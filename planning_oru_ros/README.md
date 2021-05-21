@@ -1,4 +1,4 @@
-# coordination_oru_ros
+# planning_oru_ros
 This package provides an online coordination method for multiple robots for use with the <a href="https://github.com/OrebroUniversity/navigation_oru-release">navigation_oru</a> package. It is based on the <a href="https://github.com/FedericoPecora/coordination_oru">coordination_oru</a> implementation of a trajectory-envelope based coordination algorithm.
 
 ## Pre-requisites
