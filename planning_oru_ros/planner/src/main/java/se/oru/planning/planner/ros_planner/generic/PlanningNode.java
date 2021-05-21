@@ -1,6 +1,7 @@
 package se.oru.planning.planner.ros_planner.generic;
 
-
+import fr.uga.pddl4j.util.Plan;
+import fr.uga.pddl4j.parser.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -12,32 +13,25 @@ import orunav_msgs.Trigger;
 import orunav_msgs.RobotReport;
 
 import org.metacsp.multi.spatioTemporal.paths.Pose;
-import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
-import org.metacsp.multi.spatioTemporal.paths.Quaternion;
+
 import org.ros.concurrent.CancellableLoop;
-import org.ros.exception.ServiceException;
+
 import org.ros.message.MessageListener;
 import org.ros.namespace.GraphName;
 import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.parameter.ParameterTree;
-import org.ros.node.service.ServiceResponseBuilder;
+
 import org.ros.node.topic.Publisher;
 import org.ros.node.topic.Subscriber;
 
-import com.vividsolutions.jts.geom.Coordinate;
 
-import se.oru.coordination.coordination_oru.ConstantAccelerationForwardModel;
-import se.oru.coordination.coordination_oru.CriticalSection;
-import se.oru.coordination.coordination_oru.Mission;
-import se.oru.coordination.coordination_oru.RobotAtCriticalSection;
-
-import se.oru.coordination.coordination_oru.motionplanning.AbstractMotionPlanner;
 import se.oru.coordination.coordination_oru.util.Missions;
-import se.oru.coordination.coordination_oru.util.RVizVisualization;
-import se.oru.coordination.coordinator.ros_coordinator.ComputeTaskServiceMotionPlanner;
-import se.oru.coordination.coordinator.ros_coordinator.IliadMission.OPERATION_TYPE;
-import se.oru.coordination.coordinator.ros_coordinator.TrajectoryEnvelopeCoordinatorROS;
+
+
+import se.oru.planning.planner.ros_planner.TaskAssignmentAndSequencingROS;
+
+
 
 public class PlanningNode extends AbstractNodeMain {
 

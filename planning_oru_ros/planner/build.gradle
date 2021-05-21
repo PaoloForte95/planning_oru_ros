@@ -69,10 +69,28 @@ dependencies {
   //compile 'se.oru.coordination:coordination_oru:0.0.0-SNAPSHOT'
 
   //current github snapshot:
-  compile 'com.github.FedericoPecora:coordination_oru:master-SNAPSHOT'
+  compile 'com.github.PaoloForte95:coordination_oru:master-SNAPSHOT'
 
   //This is for Luigi:
   //compile fileTree(dir: 'lib', include: '**/*.jar')
+
+
+
+  ///////////////////////////////////////////////
+  // Planning_ORU dependency alternatives: //
+  ///////////////////////////////////////////////
+  
+
+
+  //current github snapshot:
+  compile 'com.github.PaoloForte95:planning_oru:master-SNAPSHOT'
+
+
+
+
+
+
+
 
   ///////////////////////////////////////////////
   // PDDL4J dependency alternatives: //

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="robot_id" default="1" />
+  <arg name="tf_prefix" value="robot$(arg robot_id)"/>
+
+  <rosparam command="load" file="$(find orunav_params)/config/global.cfg"/>
+  <rosparam command="load" file="$(find hx_mpc)/config/hx_simulation.cfg" />
+
+  <include file="$(find cititruck_gazebo)/launch/hx_empty.launch"/>
+  <include file="$(find gazebo_worlds_oru)/launch/empty_map_server.launch"/>
+
+  <include file="$(find coordination_oru_ros)/launch/load_robot_params.launch">
+    <arg name="robot_type" value="cititruck" />
+    <arg name="robot_id" value="1" />
+  </include>
+  
+  <node name="task_planner" pkg="planning_oru_ros" type="planner" args="se.oru.planning.planner.ros_planner.generic.PlanningNode" output="screen">
+    <rosparam param="robot_ids">[1]</rosparam>
+    <param name="planning_file" value="Plan2.txt" />
+  </node>
+
+
+ <node name="coordinator" pkg="coordination_oru_ros" type="coordinator" args="se.oru.coordination.coordinator.ros_coordinator.generic.MainNode" output="screen">
+    <rosparam param="robot_ids">[1]</rosparam>
+    <param name="temporal_resolution" value="1000.0" />
+    <param name="report_topic" value="control/report"/>
+    <param name="control_period" value="1000" />
+  </node>
+
+  <!-- ALL ROBOT SPECIFIC TASKS -->
+  <include file="$(find orunav_launch)/launch/cititruck_sim.launch">
+    <arg name="robot_id" value="1" />
+  </include>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cititruck_description)/launch/cititruck.rviz"/>
+
+</launch>
